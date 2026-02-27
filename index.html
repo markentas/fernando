@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernando - Mis 18</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <!-- Audio -->
+    <audio id="audio" src="audio/audio.mp3" loop></audio>
+
+    <!-- Botón música -->
+    <button id="btn-musica" class="btn-musica" onclick="toggleMusica()">
+        <i class="fas fa-play"></i>
+    </button>
+
+    <!-- Hero -->
+    <section id="hero" class="hero">
+        <div class="hero-leaves">
+            <span></span><span></span><span></span><span></span>
+        </div>
+        
+        <div class="hero-content">
+            <p class="hero-year">2026</p>
+            <p class="hero-subtitle">CELEBRO MIS</p>
+            <h1 class="hero-title">18</h1>
+            <p class="hero-name">FERNANDO</p>
+            <p class="hero-surname">DÍAZ</p>
+            <a href="#countdown" class="hero-btn" onclick="iniciarMusica(); document.getElementById('countdown').scrollIntoView({behavior: 'smooth'}); return false;">DESCUBRIR</a>
+        </div>
+    </section>
+
+    <!-- Countdown -->
+    <section id="countdown" class="countdown" data-fecha="2026-07-20" data-hora="22:00">
+        <div class="countdown-wrapper">
+            <p class="countdown-title">LA CUENTA REGRESIVA</p>
+            <div class="countdown-timer">
+                <div class="count-block">
+                    <div class="count-circle">
+                        <span class="count-number" id="days">00</span>
+                    </div>
+                    <span class="count-label">Días</span>
+                </div>
+                <div class="count-block">
+                    <div class="count-circle">
+                        <span class="count-number" id="hours">00</span>
+                    </div>
+                    <span class="count-label">Horas</span>
+                </div>
+                <div class="count-block">
+                    <div class="count-circle">
+                        <span class="count-number" id="minutes">00</span>
+                    </div>
+                    <span class="count-label">Minutos</span>
+                </div>
+                <div class="count-block">
+                    <div class="count-circle">
+                        <span class="count-number" id="seconds">00</span>
+                    </div>
+                    <span class="count-label">Segundos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Padres -->
+    <section id="padres" class="padres">
+        <div class="padres-container">
+            <p class="padres-decoration">❧</p>
+            <p class="padres-text">Con la bendicíon de</p>
+            <p class="padres-names">Luis Díaz <span>&</span> Carmen Fuentes</p>
+            <p class="padres-decoration">❧</p>
+        </div>
+    </section>
+
+    <!-- Fotos Slider -->
+    <section id="fotos" class="fotos">
+        <h2 class="fotos-title">El cumpleañero</h2>
+        <div class="slider-container">
+            <div class="slider-wrapper" id="sliderWrapper">
+                <div class="slider-slide">
+                    <img src="img/boy1.jpg" alt="Fernando">
+                    <div class="slider-overlay">
+                        <p class="slider-name">FERNANDO DÍAZ</p>
+                    </div>
+                </div>
+                <div class="slider-slide">
+                    <img src="img/boy2.jpg" alt="Fernando">
+                    <div class="slider-overlay">
+                        <p class="slider-name">FERNANDO DÍAZ</p>
+                    </div>
+                </div>
+                <div class="slider-slide">
+                    <img src="img/boy3.jpg" alt="Fernando">
+                    <div class="slider-overlay">
+                        <p class="slider-name">FERNANDO DÍAZ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <div class="slider-dot active" onclick="goToSlide(0)"></div>
+            <div class="slider-dot" onclick="goToSlide(1)"></div>
+            <div class="slider-dot" onclick="goToSlide(2)"></div>
+        </div>
+    </section>
+
+    <!-- Fecha -->
+    <section id="fecha" class="fecha">
+        <div class="fecha-container">
+            <div class="fecha-icon">
+                <i class="far fa-calendar"></i>
+            </div>
+            <p class="fecha-title">CUANDO</p>
+            <p class="fecha-text">20 de Julio</p>
+            <p class="fecha-detail">A las 22:00 horas</p>
+        </div>
+    </section>
+
+    <!-- Frase -->
+    <section id="frase" class="frase">
+        <div class="frase-container">
+            <p class="frase-text">"18 años para vivir, aprender y disfrutar. Gracias por ser parte de mi historia."</p>
+            <p class="frase-autor">— Fernando</p>
+        </div>
+    </section>
+
+    <!-- Ubicación -->
+    <section id="ubicacion" class="ubicacion">
+        <div class="ubicacion-container">
+            <div class="ubicacion-icon">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <p class="ubicacion-titulo">DÓNDE</p>
+            <p class="ubicacion-lugar">Jardín Events</p>
+            <p class="ubicacion-detalle">Camino Real 234, Ciudad</p>
+            <a href="#" class="ubicacion-btn" onclick="return false;">VER EN MAPA</a>
+        </div>
+    </section>
+
+    <!-- Dress Code -->
+    <section id="dresscode" class="dresscode">
+        <div class="dresscode-container">
+            <p class="dresscode-title">DRESS CODE</p>
+            <p class="dresscode-text">ELEGANTE</p>
+            <div class="dresscode-colors">
+                <div class="color-swatch forest"></div>
+                <div class="color-swatch olive"></div>
+                <div class="color-swatch stone"></div>
+                <div class="color-swatch ivory"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerario -->
+    <section id="itinerario" class="itinerario">
+        <div class="itinerario-container">
+            <p class="itinerario-title">ITINERARIO</p>
+            <div class="itinerario-item">
+                <div class="itinerario-time">22:00</div>
+                <div class="itinerario-content">
+                    <p class="itinerario-actividad">Recepción</p>
+                    <p class="itinerario-detalle">Bienvenida a invitados</p>
+                </div>
+            </div>
+            <div class="itinerario-item">
+                <div class="itinerario-time">22:30</div>
+                <div class="itinerario-content">
+                    <p class="itinerario-actividad">Cena</p>
+                    <p class="itinerario-detalle">Momento para compartir</p>
+                </div>
+            </div>
+            <div class="itinerario-item">
+                <div class="itinerario-time">00:00</div>
+                <div class="itinerario-content">
+                    <p class="itinerario-actividad">Corte de Torta</p>
+                    <p class="itinerario-detalle">El momento especial</p>
+                </div>
+            </div>
+            <div class="itinerario-item">
+                <div class="itinerario-time">02:00</div>
+                <div class="itinerario-content">
+                    <p class="itinerario-actividad">Cierre</p>
+                    <p class="itinerario-detalle">Fin de la celebración</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regalos -->
+    <section id="regalos" class="regalos">
+        <div class="regalos-container">
+            <div class="regalos-icon">
+                <i class="fas fa-gift"></i>
+            </div>
+            <p class="regalos-title">REGALOS</p>
+            <p class="regalos-text">Tu presencia es mi mejor regalo. Si deseas hacer llegar algo, te compartire los datos al confirmar.</p>
+            <button class="regalos-btn" onclick="openModal()">VER DATOS</button>
+        </div>
+    </section>
+
+    <!-- Instagram -->
+    <section id="instagram" class="instagram">
+        <div class="instagram-container">
+            <p class="instagram-title">#MIS18FERNANDO</p>
+            <p class="instagram-text">Comparte tus fotos y etiquetame para revivir los recuerdos.</p>
+            <p class="instagram-user">@fernando_diaz</p>
+        </div>
+    </section>
+
+    <!-- Confirmar -->
+    <section id="confirmar" class="confirmar">
+        <div class="confirmar-container">
+            <p class="confirmar-title">CONFIRMAR ASISTENCIA</p>
+            <p class="confirmar-date">Antes del 5 de Julio</p>
+            <a href="#" class="confirmar-btn" onclick="alert('WhatsApp no configurado'); return false;">WHATSAPP</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer" class="footer">
+        <div class="footer-container">
+            <p class="footer-invitacion">MIS 18</p>
+            <p class="footer-name">FERNANDO</p>
+            <p class="footer-espero">TE ESPERO</p>
+            <p class="footer-hashtag">#Mis18Fernando</p>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content">
+            <p class="modal-title">DATOS DE LA CUENTA</p>
+            <div class="modal-datos">
+                <p class="modal-banco">Banco Patagonia</p>
+                <p class="modal-alias">FERNANDO.18</p>
+                <p class="modal-titular">Titular: Fernando Díaz</p>
+            </div>
+            <button class="modal-cerrar" onclick="closeModal()">CERRAR</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
